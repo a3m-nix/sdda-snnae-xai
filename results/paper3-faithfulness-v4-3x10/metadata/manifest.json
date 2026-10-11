@@ -1,0 +1,140 @@
+{
+  "run_hash": "bd5f6678189a976a",
+  "config": {
+    "protocol": "v4-3x10",
+    "output": "paper3-faithfulness-v4-3x10",
+    "v83": "0-snn-ae-unified-v8-3-fair-benchmark",
+    "datasets": [
+      "edge_iiotset",
+      "ciciot2023"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "data_path": {
+      "edge_iiotset": "/home/jupyteruser/nix-ext-backup/0-eksperimen-final/dataset-from-pcap/edge-iiotset_bidir.parquet",
+      "ciciot2023": "/home/jupyteruser/nix-ext-backup/0-eksperimen-final/dataset-from-pcap/ciciot2023_bidir.parquet"
+    },
+    "label_column": {
+      "edge_iiotset": "label",
+      "ciciot2023": "label"
+    },
+    "normal_class": {
+      "edge_iiotset": "Normal",
+      "ciciot2023": "Benign"
+    },
+    "drop_features": {
+      "edge_iiotset": [
+        "label",
+        "label_type",
+        "flow_id",
+        "packet_index",
+        "frame.time_epoch"
+      ],
+      "ciciot2023": [
+        "label",
+        "label_type",
+        "flow_id",
+        "packet_index",
+        "frame.time_epoch"
+      ]
+    },
+    "scaler_type": {
+      "edge_iiotset": "quantile",
+      "ciciot2023": "minmax"
+    },
+    "cap_per_subtype": 50000,
+    "dim": 33,
+    "seed": 42,
+    "pb": 4096,
+    "val_ratio": 0.2,
+    "operating_percentile": 99,
+    "epochs": 50,
+    "batch_size": 512,
+    "patience": 8,
+    "grad_clip": 1.0,
+    "latent_dim": 32,
+    "faith_n": 100,
+    "m_features": 3,
+    "magnitudes": [
+      2.0,
+      4.0,
+      6.0
+    ],
+    "shap_bg": 50,
+    "shap_nsamples": 200,
+    "runtime_n": 20,
+    "runtime_repeats": 3,
+    "cf_per_subtype": 10,
+    "reference_pool": 2000,
+    "sared_k": 2.0,
+    "sared_pct": 75,
+    "alpha": 0.5,
+    "supp_cal_n": 2000,
+    "supp_per_subtype": 2000,
+    "feature_behavior_normal_n": 500,
+    "feature_behavior_topk": 3,
+    "stability_n": 20,
+    "stability_eps": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "stability_repeats": 3,
+    "shap_self_repeats": 5,
+    "sared_k_grid": [
+      1.5,
+      2.0,
+      2.5
+    ],
+    "sared_pct_grid": [
+      70,
+      75,
+      80
+    ],
+    "alpha_grid": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "run_frozen_decoder_intervention": true,
+    "decoder_widths": [
+      32,
+      64
+    ],
+    "decoder_epochs": 30,
+    "decoder_patience": 5,
+    "decoder_batch": 512,
+    "decoder_learning_rate": 0.001,
+    "decoder_train_n": 100000,
+    "bootstrap": 10000,
+    "run_mode": "final"
+  },
+  "created_at": "2026-08-01 13:01:11",
+  "versions": {
+    "python": "3.10.12",
+    "tensorflow": "2.12.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2",
+    "scipy": "1.15.1",
+    "shap": "0.47.2"
+  },
+  "devices": [
+    "PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU')"
+  ]
+}

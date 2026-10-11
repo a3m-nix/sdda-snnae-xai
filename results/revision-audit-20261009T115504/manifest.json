@@ -1,0 +1,8 @@
+{
+  "base": "/home/jupyteruser/nix-ext-backup/0-eksperimen-final/paper3-faithfulness-v4-3x10",
+  "r_test_train": {
+    "ciciot2023": 0.2777777777777778,
+    "edge_iiotset": 0.2777777777777778
+  },
+  "created_utc": "2026-10-09T11:55:05.288983+00:00"
+}

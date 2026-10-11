@@ -1,0 +1,101 @@
+{
+  "version": "eq9-ablation-v1",
+  "protocol_hash": "3d89456dd603f09578534ba44f5bed6f1bcfe8ffca93bbd9120fd49b60379b51",
+  "protocol": {
+    "source": "/home/jupyteruser/nix-ext-backup/0-eksperimen-final/paper3-faithfulness-v4-3x10",
+    "v83": "/home/jupyteruser/nix-ext-backup/0-eksperimen-final/0-snn-ae-unified-v8-3-fair-benchmark",
+    "datasets": [
+      "edge_iiotset",
+      "ciciot2023"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 42,
+    "dim": 33,
+    "pb": 4096,
+    "faith_n": 100,
+    "m_features": 3,
+    "magnitudes": [
+      2.0,
+      4.0,
+      6.0
+    ],
+    "shap_bg": 50,
+    "cf_per_subtype": 10,
+    "EPS": 1e-12,
+    "sd_eps": 1e-08,
+    "primary_magnitude": 6.0,
+    "parity": {
+      "atol_rank": 1e-06,
+      "rtol_err": 0.0001,
+      "atol_err": 1e-08,
+      "rtol_curve": 0.0001,
+      "atol_curve": 1e-07,
+      "rtol_metric": 1e-06,
+      "atol_metric": 1e-09
+    }
+  },
+  "variants": {
+    "rho_raw": [
+      "rho",
+      "raw"
+    ],
+    "rho_norm": [
+      "rho",
+      "norm"
+    ],
+    "absdev_raw": [
+      "absdev",
+      "raw"
+    ],
+    "absdev_norm": [
+      "absdev",
+      "norm"
+    ],
+    "z_raw": [
+      "z",
+      "raw"
+    ],
+    "z_norm": [
+      "z",
+      "norm"
+    ]
+  },
+  "script_sha256_seen": [
+    "c7343097e89e631687984abcd29510c374f5e01b706ec88cf93489c090029bfe"
+  ],
+  "script_log": [
+    {
+      "script_sha256": "c7343097e89e631687984abcd29510c374f5e01b706ec88cf93489c090029bfe",
+      "job_code_hash": "7ef54ea1b1a182441cccd42586777efa62e85c01e3c307fa5e657544a731f8f4",
+      "time": "2026-10-09 21:38:21"
+    }
+  ],
+  "created": "2026-10-09 21:38:21",
+  "host": "nixfsv2",
+  "python": "3.10.12",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "sklearn": "1.5.2",
+  "scipy": "1.15.1",
+  "source_tables_sha256": {
+    "raw/split_audit.csv": "e9c9ca445c8f70e2aba5a5ad72225581b4d83863ef0b3ef0976986044256fcdd",
+    "raw/faithfulness.csv": "f2d3ff222e519403166a4b719e06ce4442f7238e6242b7b2e53ac3cebb876f2e",
+    "raw/counterfactual.csv": "4d36eb23901decb37496ad7b46dec183cf6f5c5e08ea24abd444e087af08c72a"
+  }
+}

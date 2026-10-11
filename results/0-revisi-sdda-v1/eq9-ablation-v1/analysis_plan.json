@@ -1,0 +1,42 @@
+{
+  "plan": {
+    "status": "pre-specified analysis plan (not an independent registration). Specified after the A1-A3 audit of existing v4-3x10 results and before any result of this ablation was observed.",
+    "question": "Does baseline-relative spike deviation add measurable attribution value over raw spike activity when the projection mechanism is identical?",
+    "primary_family": [
+      "edge_iiotset|p3_ctrl_m6|z_norm vs rho_norm",
+      "edge_iiotset|p3_ctrl_m6|z_raw vs rho_raw",
+      "edge_iiotset|p3_donor|z_norm vs rho_norm",
+      "edge_iiotset|p3_donor|z_raw vs rho_raw",
+      "ciciot2023|p3_ctrl_m6|z_norm vs rho_norm",
+      "ciciot2023|p3_ctrl_m6|z_raw vs rho_raw",
+      "ciciot2023|p3_donor|z_norm vs rho_norm",
+      "ciciot2023|p3_donor|z_raw vs rho_raw"
+    ],
+    "primary_metric": "P@3 (higher is better); controlled scaled_std magnitude 6.0 and empirical attack donor",
+    "unit": "paired (seed, fold), J = 30 per dataset; per-unit mean over samples",
+    "tests": [
+      "corrected resampled t-test (Nadeau & Bengio 2003), r = n_test / n_train_normal; a sensitivity analysis for resampling dependence, NOT an elimination of dependence between folds/seeds",
+      "Wilcoxon signed-rank (two-sided) with Hodges-Lehmann estimate for direction"
+    ],
+    "multiplicity": "Holm over the 8 primary contrasts, applied separately to each test",
+    "decision_rule": "SUPPORTED only if both Holm-adjusted p < 0.05 AND mean difference and Hodges-Lehmann estimate have the same sign; both significant but opposite signs -> INCONSISTENT_DIRECTION; exactly one significant -> INCONSISTENT; neither -> NOT_SUPPORTED. Winner label uses the metric direction (higher/lower is better).",
+    "effect_size": "mean paired difference; corrected-t 95% CI NOT adjusted for multiplicity (Holm is applied to p-values only); Hodges-Lehmann estimate; units won of 30",
+    "claim_levels": [
+      "consistent benefit across the full design requires SUPPORTED delta-better in all 8 primary contrasts (2 datasets x 2 protocols x 2 projections)",
+      "partial support -> claim limited to the dataset/protocol/projection conditions that pass",
+      "secondary: delta and absdev both better than rho but delta vs absdev not significant -> baseline deviation shows benefit; the additional contribution of sigma scaling is not established (not: shown absent)",
+      "no supported advantage -> formulation difference only; no demonstrated faithfulness benefit"
+    ],
+    "secondary": [
+      "mechanism contrasts among the 6 variants (+RawError, KernelSHAP, Random)",
+      "controlled magnitudes 2 and 4",
+      "detected-stratified P@3",
+      "deletion/insertion: log_audc(-), log_auic(+), restricted_deletion_k(-), restricted_insertion_k(-), deletion_flip(+), insertion_flip(+)"
+    ],
+    "secondary_not_conditions": "AUDC/AUIC results are reported in full but are not conditions for primary claims",
+    "interpretation": "faithfulness with respect to the reconstruction score; not causal evidence about attacks; score-based deletion/insertion structurally favours RawError",
+    "final_evidence_requirement": "all 60 jobs valid under one job-code hash"
+  },
+  "plan_sha256": "5dded96bbf9317a583ecb95b3f99c9b289c1708bc26fb9105f7552403368df8f",
+  "created": "2026-10-09 21:38:21"
+}

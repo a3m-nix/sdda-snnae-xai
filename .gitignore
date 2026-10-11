@@ -1,0 +1,16 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.log
+# data and large outputs are not versioned (see data/README.md and the Zenodo record)
+data/dataset-from-pcap/
+results/*/data/
+results/*/models/
+results/*/jobs/
+results/0-revisi-sdda-v1/eq9-ablation-v1/jobs/
+results/paper3-faithfulness-v4-3x10/raw/feature_behavior.csv
+results/paper3-faithfulness-v4-3x10/raw/suppression.csv
+# manuscript material is not part of this repository
+*.docx
+*.png
+*.pdf

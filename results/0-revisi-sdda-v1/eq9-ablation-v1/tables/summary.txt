@@ -1,0 +1,33 @@
+eq9-ablation analysis 2026-10-09 21:48:46 | FINAL | valid jobs 60/60 | job-code hash 7ef54ea1b1a18244 | r={'ciciot2023': 0.2777777777777778, 'edge_iiotset': 0.2777777777777778}
+parity: 60/60 jobs with all checks passed (checks per job: 28-28)
+
+PRIMARY (pre-specified; Holm over 8 on p-values; SUPPORTED needs both tests significant + same direction; CI = corrected-t 95% NOT adjusted for multiplicity):
+     dataset     metric         comparison  mean_diff  ci95_unadj_low  ci95_unadj_high  hodges_lehmann  wins_a  wins_b  p_corrected_holm  p_wilcoxon_holm      decision
+edge_iiotset p3_ctrl_m6 z_norm vs rho_norm     0.0103         -0.0027           0.0234          0.0117      24       5            0.8101           0.0013  INCONSISTENT
+edge_iiotset p3_ctrl_m6   z_raw vs rho_raw     0.0094         -0.0043           0.0231          0.0100      25       3            1.0000           0.0036  INCONSISTENT
+edge_iiotset   p3_donor z_norm vs rho_norm     0.0036         -0.0100           0.0171          0.0050      19       8            1.0000           0.1706 NOT_SUPPORTED
+edge_iiotset   p3_donor   z_raw vs rho_raw     0.0017         -0.0100           0.0133          0.0017      16      12            1.0000           0.3044 NOT_SUPPORTED
+  ciciot2023 p3_ctrl_m6 z_norm vs rho_norm     0.0066         -0.0074           0.0206          0.0067      21       8            1.0000           0.0134  INCONSISTENT
+  ciciot2023 p3_ctrl_m6   z_raw vs rho_raw     0.0077         -0.0060           0.0213          0.0083      23       6            1.0000           0.0035  INCONSISTENT
+  ciciot2023   p3_donor z_norm vs rho_norm     0.0102         -0.0011           0.0215          0.0100      23       3            0.5951           0.0003  INCONSISTENT
+  ciciot2023   p3_donor   z_raw vs rho_raw     0.0088         -0.0043           0.0219          0.0083      21       4            1.0000           0.0036  INCONSISTENT
+
+METHOD MEANS (run level):
+method                   KernelSHAP  Random  RawError  absdev_norm  absdev_raw  rho_norm  rho_raw  z_norm   z_raw
+dataset      metric                                                                                              
+ciciot2023   log_audc        0.5231  2.1108    0.5126       0.6261      0.6209    0.6415   0.6376  0.6260  0.6207
+             log_auic        3.5793  2.1121    3.5701       3.5289      3.5285    3.5191   3.5194  3.5288  3.5286
+             p3_ctrl_m6      0.7149  0.0930    0.5679       0.7307      0.7314    0.7254   0.7247  0.7320  0.7323
+             p3_donor        0.2448  0.0873    0.3088       0.2427      0.2400    0.2317   0.2309  0.2419  0.2397
+edge_iiotset log_audc        1.3241  2.1519    1.3422       1.3133      1.3130    1.3277   1.3235  1.3172  1.3176
+             log_auic        2.7777  2.1269    2.7600       2.7325      2.7342    2.7194   2.7201  2.7327  2.7337
+             p3_ctrl_m6      0.7379  0.0929    0.5808       0.7956      0.7956    0.7890   0.7897  0.7993  0.7991
+             p3_donor        0.5109  0.0897    0.4613       0.4989      0.4984    0.5002   0.5012  0.5038  0.5029
+
+CLAIM SCOPE: delta-better SUPPORTED in 0/8 primary contrasts (full-design claim requires 8/8). Passing conditions: none
+
+SECONDARY mechanism decisions among variants (count):
+decision      INCONSISTENT  NOT_SUPPORTED
+dataset                                  
+ciciot2023              92            178
+edge_iiotset            81            189
